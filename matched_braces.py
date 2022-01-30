@@ -19,7 +19,7 @@ def is_balanced(input_str):
     # Check if the string is balanced
     stack = []
     for char in brace_string:
-        if char in ["[", "{", "("]:
+        if char in valid_braces:
             stack.append(char)
         else:
             brace = stack.pop()
