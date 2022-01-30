@@ -1,5 +1,5 @@
 fmt:
-	black .
+	black . $(ARGS)
 
 install:
 	pip3 install --user -r requirements.txt

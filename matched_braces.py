@@ -4,7 +4,7 @@ import re
 
 
 def is_balanced(input_str):
-    "Check if the input string has matching braces"
+    "Check if the input string has balanced braces"
 
     valid_braces = {"{": "}", "[": "]", "(": ")"}
 
