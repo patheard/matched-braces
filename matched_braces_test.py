@@ -8,19 +8,19 @@ class MatchedBracesTest(unittest.TestCase):
         pass
 
     def test_valid_braces(self):
-        self.assertTrue(MODULE.match_braces("(())"))
-        self.assertTrue(MODULE.match_braces("([])"))
-        self.assertTrue(MODULE.match_braces("{(())[]}"))
-        self.assertTrue(MODULE.match_braces("()[]{}"))
-        self.assertTrue(MODULE.match_braces("[hello]"))
-        self.assertTrue(MODULE.match_braces("{general kenobi}"))
+        self.assertTrue(MODULE.is_balanced("(())"))
+        self.assertTrue(MODULE.is_balanced("([])"))
+        self.assertTrue(MODULE.is_balanced("{(())[]}"))
+        self.assertTrue(MODULE.is_balanced("()[]{}"))
+        self.assertTrue(MODULE.is_balanced("[hello]"))
+        self.assertTrue(MODULE.is_balanced("{general kenobi}"))
 
     def test_invalid_braces(self):
-        self.assertFalse(MODULE.match_braces("(d))"))
-        self.assertFalse(MODULE.match_braces("([a]"))
-        self.assertFalse(MODULE.match_braces("([{}]]"))
-        self.assertFalse(MODULE.match_braces("{(())[]}}"))
-        self.assertFalse(MODULE.match_braces("}"))
-        self.assertFalse(MODULE.match_braces("[]]]]]]]]](()()()()"))
-        self.assertFalse(MODULE.match_braces("{{}}}"))
-        self.assertFalse(MODULE.match_braces("[][][][][]}"))
+        self.assertFalse(MODULE.is_balanced("(d))"))
+        self.assertFalse(MODULE.is_balanced("([a]"))
+        self.assertFalse(MODULE.is_balanced("([{}]]"))
+        self.assertFalse(MODULE.is_balanced("{(())[]}}"))
+        self.assertFalse(MODULE.is_balanced("}"))
+        self.assertFalse(MODULE.is_balanced("[]]]]]]]]](()()()()"))
+        self.assertFalse(MODULE.is_balanced("{{}}}"))
+        self.assertFalse(MODULE.is_balanced("[][][][][]}"))

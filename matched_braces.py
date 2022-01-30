@@ -1,9 +1,9 @@
-"Module that checks if a given string has matching braces"
+"Module that checks if a given string has balanced braces"
 
 import re
 
 
-def match_braces(input_str):
+def is_balanced(input_str):
     "Check if the input string has matching braces"
 
     valid_braces = {"{": "}", "[": "]", "(": ")"}
@@ -13,7 +13,7 @@ def match_braces(input_str):
     brace_string = only_braces.sub("", input_str)
 
     # Valid brace string must be even length
-    if len(brace_string) % 2 != 0:
+    if len(brace_string) % 2 != 0 or len(brace_string) == 0:
         return False
 
     # Check if the string is balanced
