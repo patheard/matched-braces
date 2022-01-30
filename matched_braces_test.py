@@ -17,7 +17,8 @@ class MatchedBracesTest(unittest.TestCase):
 
     def test_invalid_braces(self):
         self.assertFalse(MODULE.match_braces("(d))"))
-        self.assertFalse(MODULE.match_braces("([]"))
+        self.assertFalse(MODULE.match_braces("([a]"))
+        self.assertFalse(MODULE.match_braces("([{}]]"))
         self.assertFalse(MODULE.match_braces("{(())[]}}"))
         self.assertFalse(MODULE.match_braces("}"))
         self.assertFalse(MODULE.match_braces("[]]]]]]]]](()()()()"))

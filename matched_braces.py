@@ -6,6 +6,8 @@ import re
 def match_braces(input_str):
     "Check if the input string has matching braces"
 
+    valid_braces = {"{": "}", "[": "]", "(": ")"}
+
     # Remove all non-brace characters
     only_braces = re.compile("[^\\[\\]\\{\\}\\(\\)]")
     brace_string = only_braces.sub("", input_str)
@@ -20,14 +22,8 @@ def match_braces(input_str):
         if char in ["[", "{", "("]:
             stack.append(char)
         else:
-            if len(stack) == 0:
+            brace = stack.pop()
+            if valid_braces[brace] != char:
                 return False
-            if char == "]" and stack[-1] != "[":
-                return False
-            if char == "}" and stack[-1] != "{":
-                return False
-            if char == ")" and stack[-1] != "(":
-                return False
-            stack.pop()
 
     return True
